@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: #FAFAFA;
+        }
+        
+        .phone {
+            width: 16%;
+            height: 65%;
+            padding: 12px;
+            border-radius: 20px;
+            background-color: #FEFCFE;
+            box-shadow: 12px 20px 20px 3px #dddddd;
+        }
+        
+        .phone-contents {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-color: hsl(270, 20%, 96%);
+        }
+        
+        .profile {
+            padding: 20px 10px 10px 10px;
+            background-image: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+            /* width: 100%; */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            /* align-items: center; */
+            /* position: relative; */
+        }
+        
+        h3 {
+            font-size: 12px;
+        }
+        
+        h4 {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        
+        .profile img {
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        h1 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .profile p {
+            color: #D280FF;
+            font-size: 14px;
+        }
+        
+        p {
+            font-size: 10px;
+        }
+        
+        .received {
+            margin-top: 10px;
+            padding-left: 10px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .receivedmsg {
+            background-color: #EFE4F3;
+            color: hsl(276, 55%, 52%);
+            width: 60%;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 10px;
+            padding: 5px 5px;
+        }
+        
+        .sent {
+            margin-top: 10px;
+            padding-right: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .dog-images {
+            margin-top: 10px;
+            /* padding-right: 10px; */
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .sentmsg {
+            background-color: white;
+            color: black;
+            width: 60%;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 10px;
+            padding: 5px 5px;
+        }
+        
+        .dogs {
+            /* background-color: white; */
+            /* color: black; */
+            width: 75%;
+            border-radius: 10px;
+            /* padding: 5px 5px; */
+        }
+        
+        .dogs img {
+            /* border: 2px solid white; */
+            border-radius: 20px;
+            width: 30%;
+            height: 60px;
+            /* margin-right: 10px; */
+        }
+        
+        .white-color {
+            width: 60%;
+            background-color: white;
+            height: 25px;
+            border-radius: 15px;
+            margin: -13% auto 0 auto;
+        }
+        
+        .identification {
+            margin: 3px 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .walk {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 10px;
+            padding-left: 10px;
+        }
+        
+        .input-container {
+            width: 100%;
+            height: 30px;
+            /* margin-top: 10px; */
+            padding: 0 10px;
+        }
+        
+        input {
+            border: none;
+            height: 100%;
+            width: 86%;
+            padding: 0 10px;
+            border-radius: 30px;
+        }
+        
+        .walk-count {
+            background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+            width: 70%;
+            border-bottom-left-radius: 2px;
+            border-top-left-radius: 2px;
+            border-bottom-right-radius: 5px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px;
+            color: white;
+        }
+        
+        .messages {
+            height: 80%;
+        }
+        /* .input-container {
+            height: 10%;
+        } */
+        
+        .profile {
+            height: 8%;
+        }
+        
+        .walk span {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #D280FF;
+            border-radius: 50%;
+        }
+        
+        .rightpart {
+            margin-left: 10rem;
+            width: 30%;
+        }
+        
+        .rightpart p {
+            font-size: 20px;
+            color: rgb(187, 185, 190);
+        }
+        
+        .rightpart h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: rgb(59, 39, 79);
+        }
+        
+        .curved-bg {
+            position: absolute;
+            left: -45px;
+            top: 0;
+            z-index: -1;
+        }
+        
+        .curved-bg2 {
+            position: absolute;
+            right: -80px;
+            bottom: 0;
+            z-index: -1;
+        }
+        
+        .rectangle {
+            height: 430px;
+            width: 450px;
+            background: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+        }
+        
+        .circle {
+            height: 450px;
+            border-radius: 50%;
+            background: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+            margin-top: -50%;
+            width: 450px;
+        }
+        
+        .rectangle2 {
+            height: 430px;
+            width: 450px;
+            background: #F7F5FA;
+        }
+        
+        .circle2 {
+            height: 450px;
+            border-radius: 50%;
+            background: #F7F5FA;
+            margin-bottom: -50%;
+            width: 450px;
+        }
+        
+        @media (max-width:400px) {
+            body {
+                overflow-x: hidden;
+                /* overflow-y: scroll; */
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 40px 0;
+            }
+            .phone {
+                width: 70%;
+                height: 65%;
+                /* margin: 50px 0; */
+            }
+            .rightpart {
+                width: 100%;
+                height: 30%;
+                margin: 20px 0;
+                text-align: center;
+            }
+            .curved-bg2 {
+                display: none;
+            }
+            .curved-bg {
+                left: -120px;
+            }
+            .rectangle {
+                height: 300px;
+                width: 300px;
+                /* margin-left: -20px; */
+            }
+            .circle {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="curved-bg">
+        <div class="rectangle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="curved-bg2">
+        <div class="circle2"></div>
+        <div class="rectangle2"></div>
+
+    </div>
+    <div class="phone">
+        <div class="phone-contents">
+            <div class="profile">
+                <div class="white-color"></div>
+                <div class="identification"><img src="./images/avatar.jpg" alt="">
+
+                    <div class="name">
+                        <h1>Samuel Green</h1>
+                        <p> Available to Walk</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="messages">
+                <div class="received">
+                    <div class="receivedmsg">
+                        <p>That sounds great. I’d be happy with that.</p>
+                    </div>
+                </div>
+                <div class="received">
+                    <div class="receivedmsg">
+                        <p> Could you send over some pictures of your dog, please?</p>
+                    </div>
+                </div>
+                <div class="dog-images">
+                    <div class="dogs">
+                        <img src="./images/dog-image-1.jpg" alt="">
+                        <img src="./images/dog-image-2.jpg" alt="">
+                        <img src="./images/dog-image-3.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="sent">
+                    <div class="sentmsg">
+                        <p> Here are a few pictures. She’s a happy girl!</p>
+                    </div>
+                </div>
+                <div class="sent">
+                    <div class="sentmsg">
+                        <p> Can you make it?</p>
+                    </div>
+                </div>
+                <div class="received">
+                    <div class="receivedmsg">
+                        <p> She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+                    </div>
+                </div>
+                <div class="walk">
+                    <div class="walk-count">
+                        <span></span>
+                        <h3>30 minute walk</h3>
+                        <h4> $29</h4>
+                    </div>
+                </div>
+                <div class="walk">
+                    <div class="walk-count">
+                        <span></span>
+                        <h3> 1 hour walk</h3>
+                        <h4> $49 </h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="Type a message…">
+            </div>
+        </div>
+    </div>
+    <div class="rightpart">
+        <h1> Simple booking</h1>
+        <p> Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+    </div>
+
+    <!--      -->
+    <!-- 
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+</body>
+
+</html>
